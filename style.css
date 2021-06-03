@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #FFFF00;
+}
+
+#nav-border{
+    border-bottom: 2px solid black;
+}
+#brand-color {
+    color: red;
+    font-size: large; 
+    /* needs key frame mobile small font size to big */
+}
+
+#nav-color {
+    color: red;
+}
+
