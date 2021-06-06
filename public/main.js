@@ -4,10 +4,10 @@ let currentImage
 const expand = (e) => {
     currentImage = e.target;
     currentImage.style.position = "absolute";
-    currentImage.style.width = "30vw";
+    currentImage.style.width = "200%";
     currentImage.style.zIndex = "2";
-    currentImage.style.left = "20%";
-    currentImage.style.top = "10%";
+    // currentImage.style.left = "20%";
+    // currentImage.style.top = "10%";
     document.body.style.backgroundColor = "#151513";
     currentImage.style.backgroundColor = "#151513";
     currentImage.parentElement.style.backgroundColor = "#151513";
