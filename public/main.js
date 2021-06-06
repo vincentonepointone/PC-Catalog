@@ -1,6 +1,12 @@
-const ImagesToExpand = document.querySelectorAll("img");
-let currentImage
 
+let currentImage
+let imagesToExpand = [] 
+const container = document.querySelectorAll("#cont");
+container.forEach((cont) => {
+let Imagenode = cont.querySelectorAll('img'); 
+ imagesToExpand.push(Imagenode);
+ console.log(imagesToExpand)
+})
 const expand = (e) => {
     currentImage = e.target;
     currentImage.style.position = "absolute";
@@ -12,14 +18,16 @@ const expand = (e) => {
     currentImage.style.backgroundColor = "#151513";
     currentImage.parentElement.style.backgroundColor = "#151513";
 
-    ImagesToExpand.forEach((pic) => {
-        pic.style.display = "none";
-        pic.parentElement.style.backgroundColor = "#151513";
-        currentImage.style.display = "block"
+    imagesToExpand.forEach((pic) => {
+        pic.forEach((im) => {
+            im.parentElement.style.backgroundColor = "#151513";
+            currentImage.style.display = "block"
+          })
     })
 }
 
 const shrink = (e) => {
+    currentImage = e.target;
     currentImage.parentElement.style.backgroundColor = "white";
     currentImage.style.position = "relative";
     currentImage.style.zIndex = "1";  
@@ -28,14 +36,19 @@ const shrink = (e) => {
     document.body.style.backgroundColor = "white";
     currentImage.style.backgroundColor = "white";
 
-    ImagesToExpand.forEach((pic) => {
-        pic.style.display = "block";
-        pic.parentElement.style.backgroundColor = "white";
+    imagesToExpand.forEach((pic) => {
+        pic.forEach((im) => {
+                im.style.display = "block";
+                im.parentElement.style.backgroundColor = "white";
+          })
     })
 }
 
-ImagesToExpand.forEach((pic) => {
-    pic.addEventListener("click", expand)
-    pic.addEventListener("mouseout", shrink)
+imagesToExpand.forEach((pic) => {
+    pic.forEach((im) => {
+      im.addEventListener("click", expand) 
+      im.addEventListener("mouseout", shrink)
+    })
+    
 })
 

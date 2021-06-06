@@ -1,17 +1,45 @@
 .navbar {
-    background-color: #f2de02;
+    background-color: #1d26a2;
+    margin-bottom: 4vh;
 }
 
-#nav-border{
-    border-bottom: 2px solid black;
+#logo-name {
+    display: block;
+    color:red;
+    margin-left: 4px;
+    padding: 0;
 }
-#brand-color {
-    color: red;
-    font-size: xxx-large; 
-    /* needs key frame mobile small font size to big */
+#nav-border{
+    border-bottom: 1px solid red;
+}
+
+#nav-border a {
+    margin: 0; 
+}
+#logo{
+   height: 10vh;
+    margin: 0 2vw 0 10vw;
 }
 
 #nav-color {
     color: red;
+    font-size:25px;
 }
+
+@media only screen and (min-width: 990px) {
+    #nav-color {
+        font-size:20px;
+    }
+
+    #logo {
+        height: 10vh;
+         margin: 0 2vw 0 2vw;
+     }
+
+     #logo-name {
+        display: none;
+     }
+  }
+
+
 
