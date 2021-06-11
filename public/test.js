@@ -14,9 +14,14 @@ imageInDiv.setAttribute('src', imageSource);
 
 }
 
+const popOut = (e) => {
+  imageInDiv.removeAttribute('src');
+  imageDiv.classList.remove("pop")
+}
 
+imageDiv.addEventListener('click', popOut)
 
 
 imagesToExpand.forEach((pic) => {
-  pic.addEventListener('click', getSourceAndPopAttri) 
+  pic.addEventListener('click', getSourceAndPopAttri);
 })
